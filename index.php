@@ -21,6 +21,16 @@ require_once "./functions.php";
         Album
     </h1>
 
+    <form action="server.php" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="action" value="add_album">
+        <h2>Inserisci un nuovo album</h2>
+        <input type="text" name="titolo" placeholder="Titolo">
+        <input type="text" name="artista" placeholder="Artista">
+        <input type="text" name="anno" placeholder="Anno">
+        <input type="text" name="genere" placeholder="Genere">
+        <input type="file" name="cover" accept="image/*">
+        <button type="submit">Aggiungi</button>
+    </form>
     <div class="containerCard">
         <?php 
     foreach ($albums as $album) {
@@ -35,6 +45,8 @@ require_once "./functions.php";
         <?php
     }
     ?>
+
+    
     </div>
 </body>
 </html>
